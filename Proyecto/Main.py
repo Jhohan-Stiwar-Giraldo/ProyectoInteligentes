@@ -11,7 +11,7 @@ class Pasajero:
         self.destino = destino
 
     def __str__(self):
-        return f'Pasajero {self.id}: {self.origen} -> {self.destino}'
+        return f'Pasajero {self.id}: {self.origen} -> {self.destino} -> {self.ubicación}'
 
 class vehiculo:
     def __init__(self, id, ubicación, estado, combustible):
@@ -26,7 +26,7 @@ class vehiculo:
         self.pasajero = pasajero
 
     def __str__(self):
-        return f'Vehículo {self.id}: {self.ubicación}'
+        return f'Vehículo {self.id}: {self.ubicación} -> {self.estado} -> {self.combustible} -> {self.pasajero}'
 
 class ReporteViaje:
     def __init__(self, id, vehiculo, pasajero, combustibleConsumido, costo, duracion, distancia):
@@ -39,7 +39,7 @@ class ReporteViaje:
         self.distancia = distancia
 
     def __str__(self):
-        return f'Reporte de viaje {self.id}: {self.vehículo} -> {self.pasajero}'
+        return f'Reporte de viaje {self.id}: {self.vehículo} -> {self.pasajero} -> {self.duracion} -> {self.distancia} -> {self.combustibleConsumido} -> {self.costo}'
 
 class Ruta:
     def __init__(self, id, origen, destino, distanciaTotal, duracion, puntosIntermedios, consumoCombustible):
@@ -52,19 +52,19 @@ class Ruta:
         self.consumoCombustible = consumoCombustible
 
     def __str__(self):
-        return f'Ruta {self.id}: {self.origen} -> {self.destino}'
+        return f'Ruta {self.id}: {self.origen} -> {self.destino} -> {self.duracion} -> {self.distanciaTotal} -> {self.puntosIntermedios} -> {self.consumoCombustible}'
 
 class Nodo:
-    def __init__(self, id, ubicación, sentido, semaforo, tiempoSemaforo):
+    def __init__(self, id, ubicacion, sentido, semaforo, tiempoSemaforo):
         self.id = id
-        self.ubicación = ubicación
+        self.ubicacion = ubicacion
         self.sentido = sentido
         self.semaforo = semaforo
         self.tiempoSemaforo = tiempoSemaforo
         
 
     def __str__(self):
-        return f'Nodo {self.id}: {self.ubicación}'
+        return f'Nodo {self.id}: {self.ubicacion} -> {self.sentido} -> {self.semaforo} -> {self.tiempoSemaforo}'
     
 class sistemaSimulacion:
     vehiculosRegistrados = []
@@ -126,3 +126,4 @@ def EstadoInicial_IN():
 
 if __name__ == "__main__":
     estado_inicial =EstadoInicial_IN();
+    
